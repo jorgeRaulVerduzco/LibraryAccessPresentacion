@@ -4,6 +4,8 @@
  */
 package Presentacion;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author INEGI
@@ -156,13 +158,21 @@ public class PagoPorTarjeta extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void bnAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bnAtrasActionPerformed
-       MetodoDePago me = new MetodoDePago();
-       me.setVisible(true);
-       this.setVisible(false);
+        MetodoDePago me = new MetodoDePago();
+        me.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_bnAtrasActionPerformed
 
     private void bnFinalizarCompraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bnFinalizarCompraActionPerformed
-        // TODO add your handling code here:
+    if (txtNombrePersona.getText().equals("") && txtCCV.getText().equals("") && txtCaducidad.getText().equals("") && txtNumeroTarjeta.getText().equals("")) {
+        JOptionPane.showMessageDialog(rootPane, "Campo de texto vacío");
+    } else {
+        JOptionPane.showMessageDialog(rootPane, "Pago realizado con éxito");
+        MenuPrincipal menu = new MenuPrincipal();
+        menu.setVisible(true);
+        this.setVisible(false);
+    }
+// TODO add your handling code here:
     }//GEN-LAST:event_bnFinalizarCompraActionPerformed
 
     /**
